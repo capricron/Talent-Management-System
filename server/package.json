@@ -1,0 +1,20 @@
+{
+   "name": "server",
+   "scripts": {
+      "dev": "bun run --hot src/app.ts",
+      "start": "ts-node src/app.ts",
+      "typeorm": "typeorm-ts-node-commonjs"
+   },
+   "dependencies": {
+      "hono": "^4.6.9",
+      "mysql": "^2.14.1",
+      "reflect-metadata": "^0.1.13",
+      "typeorm": "0.3.20"
+   },
+   "devDependencies": {
+      "@types/bun": "latest",
+      "@types/node": "^16.11.10",
+      "ts-node": "10.9.1",
+      "typescript": "4.5.2"
+   }
+}
