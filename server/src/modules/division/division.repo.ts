@@ -35,4 +35,8 @@ export class DivisionRepo {
   async getAllDivision() {
     return await AppDataSource.getRepository(Division).find({});
   }
+
+  async getDivisionById(division_id: string) {
+    return await AppDataSource.getRepository(Division).findOneBy({ id: division_id });
+  }
 }

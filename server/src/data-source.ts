@@ -3,6 +3,8 @@ import { DataSource } from "typeorm";
 import { Division } from "./modules/division/division.entity";
 import { User } from "./modules/auth/user.entity";
 import { runSeeder } from "./seeders";
+import { Job } from "./modules/job/job.entity";
+import { Candidate } from "./modules/candidate/candidate.entity";
 
 const seedData = false;
 
@@ -16,7 +18,7 @@ export const AppDataSource = new DataSource({
   synchronize: false,
   dropSchema: seedData,
   logging: false,
-  entities: [User, Division],
+  entities: [User, Division, Job, Candidate],
   migrations: [],
   subscribers: [],
 });
