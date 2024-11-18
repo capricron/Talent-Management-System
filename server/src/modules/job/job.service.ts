@@ -18,4 +18,8 @@ export class JobService {
 
     return await this.jobRepo.createJob({ name: data.name, division });
   }
+
+  async getAllJob() {
+    return await this.jobRepo.getAllJob();
+  }
 }

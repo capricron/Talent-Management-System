@@ -18,4 +18,14 @@ export class JobController {
       return response(c, e.status || 400, e.data || null, "job");
     }
   }
+
+  async getAllJob(c: Context) {
+    try {
+      const result = await this.jobService.getAllJob();
+
+      return response(c, 200, result, "job");
+    } catch (e) {
+      return response(c, e.status || 400, e.data || null, "job");
+    }
+  }
 }

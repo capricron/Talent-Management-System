@@ -15,4 +15,8 @@ export class JobRepository {
   async getJobById(job_id: string) {
     return await AppDataSource.getRepository(Job).findOneBy({ id: job_id });
   }
+
+  async getAllJob() {
+    return await AppDataSource.getRepository(Job).find();
+  }
 }
