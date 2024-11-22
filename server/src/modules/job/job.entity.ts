@@ -10,6 +10,12 @@ export class Job extends BaseEntity {
   @Column()
   name: string;
 
+  @Column({ type: "text" })
+  description: string;
+
+  @Column({ type: "text" })
+  requirement: string;
+
   @OneToMany(() => Candidate, (candidate) => candidate.job)
   @JoinColumn({ name: "candidate_id" })
   candidates: Relation<Candidate>;

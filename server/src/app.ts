@@ -2,8 +2,12 @@ import { Hono } from 'hono'
 import "reflect-metadata"
 import { AppDataSource } from './data-source'
 import routes from './routes'
+import { cors } from 'hono/cors'
 
 const app = new Hono()
+
+app.use('*', cors())
+
 
 app.get('/', (c) => {
   return c.text('Hello Hono!')
@@ -23,6 +27,6 @@ routes.forEach(({ path, route }) => {
 
 
 export default {
-  port: 3333,
+  port: 5000,
   fetch: app.fetch,
 };

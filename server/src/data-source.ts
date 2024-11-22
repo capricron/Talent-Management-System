@@ -11,14 +11,19 @@ const seedData = false;
 export const AppDataSource = new DataSource({
   type: "mysql",
   host: "localhost",
-  port: 3307,
+  port: 3306,
   username: "root",
   password: "",
   database: "tms",
-  synchronize: false,
+  synchronize: true,
   dropSchema: seedData,
   logging: false,
-  entities: [User, Division, Job, Candidate],
+  entities: [
+    User, 
+    Division, 
+    Job, 
+    Candidate
+  ],
   migrations: [],
   subscribers: [],
 });

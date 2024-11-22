@@ -9,9 +9,10 @@ export class JobController {
   }
   async createJob(c: Context) {
     try {
-      const { name, division_id } = await c.req.json();
+      const { name, description, requirement, division_id } = await c.req.json();
 
-      const result = await this.jobService.createJob({ name, division_id });
+
+      const result = await this.jobService.createJob({ name, description, requirement, division_id });
 
       return response(c, 200, result, "job");
     } catch (e) {
